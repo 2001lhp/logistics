@@ -1,0 +1,46 @@
+// 主色
+$uni-primary: #ef4f3f;
+
+// 辅助色
+// 成功
+$uni-success: #27ba9b;
+// 警示
+$uni-warning: #e19a30;
+// 报错
+$uni-error: #ff4c4c;
+
+// 中性色
+// 主要文字
+$uni-main-text: #2a2929;
+// 次要文字
+$uni-minor-text: #818181;
+// 占位文字
+$uni-placeholder: #c2c1c1;
+// 表单边框
+$uni-form-border: #d9d9d9;
+// 分隔边框
+$uni-divider-border: #eeeeee;
+// 背景
+$uni-bg-color: #f4f4f4;
+
+.title {
+	font-weight: bold;
+	font-size: 32rpx;
+	color: #2a2929;
+}
+
+.text1 {
+	font-weight: bold;
+	font-size: 28rpx;
+	color: #19232b;
+}
+
+.text2 {
+	font-size: 26rpx;
+	color: #19232b;
+}
+
+.text3 {
+	font-size: 24rpx;
+	color: #80878c;
+}
