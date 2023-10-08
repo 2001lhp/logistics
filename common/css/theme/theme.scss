@@ -23,24 +23,7 @@ $uni-divider-border: #eeeeee;
 // 背景
 $uni-bg-color: #f4f4f4;
 
-.title {
-	font-weight: bold;
-	font-size: 32rpx;
-	color: #2a2929;
-}
-
-.text1 {
-	font-weight: bold;
-	font-size: 28rpx;
-	color: #19232b;
-}
-
-.text2 {
-	font-size: 26rpx;
-	color: #19232b;
-}
-
-.text3 {
-	font-size: 24rpx;
-	color: #80878c;
-}
+// 字号大小
+$uni-font-size-big: 36rpx;
+$uni-font-size-base: 32rpx;
+$uni-font-size-small: 28rpx;

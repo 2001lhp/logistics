@@ -4,6 +4,8 @@
 
 // 引入fetch
 import { createUniFetch } from 'uni-app-fetch';
+import { useUserStore } from '@/stores/user.js';
+const store = useUserStore();
 
 // 使用自定义选项创建实例
 const uniFetch = createUniFetch({
@@ -13,13 +15,15 @@ const uniFetch = createUniFetch({
 	intercept: {
 		// 请求拦截器
 		request(options) {
-			// TODO 通过请求头发送token
+			if (store.token) options.header.Authorization = store.token;
 			return options;
 		},
 		// 响应拦截器
 		response(result) {
-			// TODO 进行响应拦截处理(token过期/异常提示)
-			return result;
+			if (result.data.code === 200) {
+				return result.data;
+			}
+			uni.utils.toast(result.data.msg || '请求失败');
 		}
 	}
 });

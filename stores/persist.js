@@ -1,7 +1,7 @@
 import { createPersistedState } from 'pinia-plugin-persistedstate';
 
 const piniaPluginPersistedstate = createPersistedState({
-	key: (id) => `__persisted__${id}`,
+	key: (id) => `${id}`,
 	storage: {
 		getItem: (key) => {
 			return uni.getStorageSync(key);
