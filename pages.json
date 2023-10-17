@@ -2,56 +2,126 @@
 	"condition": {
 		"current": 3,
 		"list": [{
-				"name": "任务",
-				"path": "pages/task/task",
-				"query": ""
-			},
-			{
-				"name": "消息",
-				"path": "pages/massage/massage",
-				"query": ""
-			},
-			{
-				"name": "我的",
-				"path": "pages/my/my",
-				"query": ""
-			},
-			{
-				"name": "登录",
-				"path": "pages/login/login",
-				"query": ""
-			}
-		]
-	},
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages 
-		{
+			"name": "任务",
 			"path": "pages/task/task",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
+			"query": ""
 		}, {
-			"path": "pages/login/login",
-			"style": {
-				"navigationBarTitleText": "神领快递",
-				"enablePullDownRefresh": false
-			}
-		}, {
+			"name": "消息",
 			"path": "pages/massage/massage",
+			"query": ""
+		}, {
+			"name": "我的",
+			"path": "pages/my/my",
+			"query": ""
+		}, {
+			"name": "登录",
+			"path": "pages/login/login",
+			"query": ""
+		}]
+	},
+	"pages": [{
+		"path": "pages/task/task",
+		"style": {
+			"navigationBarTitleText": "",
+			"navigationStyle": "custom",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/login/login",
+		"style": {
+			"navigationBarTitleText": "神领快递",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/message/message",
+		"style": {
+			"navigationBarTitleText": "消息",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/my/my",
+		"style": {
+			"navigationBarTitleText": "",
+			"navigationStyle": "custom",
+			"enablePullDownRefresh": false
+		}
+	}],
+	"subPackages": [{
+		"root": "subpkg_user",
+		"pages": [{
+			"path": "truck/truck",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "车辆信息"
+			}
+		}, {
+			"path": "task/task",
+			"style": {
+				"navigationBarTitleText": "任务数据"
+			}
+		}, {
+			"path": "settings/settings",
+			"style": {
+				"navigationBarTitleText": "系统设置"
+			}
+		}, {
+			"path": "settings/bindPhone",
+			"style": {
+				"navigationBarTitleText": "换绑手机"
+			}
+		}, {
+			"path": "settings/changePassword",
+			"style": {
+				"navigationBarTitleText": "修改密码"
+			}
+		}, {
+			"path": "settings/message",
+			"style": {
+				"navigationBarTitleText": "消息通知设置"
+			}
+		}]
+	}, {
+		"root": "subpkg_task",
+		"pages": [{
+			"path": "detail/detail",
+			"style": {
+				"navigationBarTitleText": "任务详情",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pickup/pickup",
+			"style": {
+				"navigationBarTitleText": "提货信息",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "delay/delay",
+			"style": {
+				"navigationBarTitleText": "延迟提货",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "delivery/delivery",
+			"style": {
+				"navigationBarTitleText": "交货信息",
 				"enablePullDownRefresh": false
 			}
 
 		}, {
-			"path": "pages/my/my",
+			"path": "record/record",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "回车登记",
 				"enablePullDownRefresh": false
 			}
-		}
-	],
+
+		}, {
+			"path": "except/except",
+			"style": {
+				"navigationBarTitleText": "异常上报",
+				"enablePullDownRefresh": false
+			}
+
+		}]
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "神领物流",
@@ -65,20 +135,23 @@
 		"color": "#818181",
 		"selectedColor": "#EF4F3F",
 		"list": [{
-			"text": "任务",
-			"pagePath": "pages/task/task",
-			"iconPath": "static/tabbar/task_normal.png",
-			"selectedIconPath": "static/tabbar/task_selected.png"
-		}, {
-			"text": "消息",
-			"pagePath": "pages/massage/massage",
-			"iconPath": "static/tabbar/message_normal.png",
-			"selectedIconPath": "static/tabbar/message_selected.png"
-		}, {
-			"text": "我的",
-			"pagePath": "pages/my/my",
-			"iconPath": "static/tabbar/my_normal.png",
-			"selectedIconPath": "static/tabbar/my_selected.png"
-		}]
+				"text": "任务",
+				"pagePath": "pages/task/task",
+				"iconPath": "static/tabbar/task_normal.png",
+				"selectedIconPath": "static/tabbar/task_selected.png"
+			},
+			{
+				"text": "消息",
+				"pagePath": "pages/message/message",
+				"iconPath": "static/tabbar/message_normal.png",
+				"selectedIconPath": "static/tabbar/message_selected.png"
+			},
+			{
+				"text": "我的",
+				"pagePath": "pages/my/my",
+				"iconPath": "static/tabbar/my_normal.png",
+				"selectedIconPath": "static/tabbar/my_selected.png"
+			}
+		]
 	}
 }

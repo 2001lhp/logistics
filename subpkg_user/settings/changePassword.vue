@@ -1,7 +1,5 @@
-<template>
-	<view>消息</view>
-</template>
-
 <script setup></script>
+
+<template></template>
 
 <style lang="scss"></style>

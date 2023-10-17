@@ -2,10 +2,17 @@
 import { ref } from 'vue';
 import { login } from '@/api/user.js';
 import { useUserStore } from '@/stores/user.js';
+import { onLoad } from '@dcloudio/uni-app';
 const store = useUserStore();
 const formData = ref({
 	account: '',
 	password: ''
+});
+const redirectURL = ref('');
+const routeType = ref('');
+onLoad((e) => {
+	redirectURL.value = e.redirectUrl;
+	routeType.value = e.routeType;
 });
 const accountForm = ref();
 const accountRules = ref({
@@ -41,6 +48,16 @@ const submit = async () => {
 		let res = await login(formData);
 		console.log(res);
 		store.token = res.data;
+		console.log(redirectURL.value, routeType.value);
+		if (routeType.value !== undefined) {
+			uni[routeType.value]({
+				url: redirectURL.value
+			});
+		} else {
+			uni.switchTab({
+				url: '/pages/my/my'
+			});
+		}
 	} catch (e) {
 		//TODO handle the exception
 		console.log(e);

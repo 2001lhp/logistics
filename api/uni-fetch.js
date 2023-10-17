@@ -15,13 +15,28 @@ const uniFetch = createUniFetch({
 	intercept: {
 		// 请求拦截器
 		request(options) {
-			if (store.token) options.header.Authorization = store.token;
+			// if (store.token) options.header.Authorization = store.token;
+			const defaultHeader = {
+				Authorization: store.token
+			};
+			options.header = Object.assign({}, defaultHeader, options.header);
 			return options;
 		},
 		// 响应拦截器
 		response(result) {
 			if (result.data.code === 200) {
 				return result.data;
+			}
+			if (result.statusCode === 401) {
+				const pageStack = getCurrentPages();
+				// console.log('pageStack', pageStack);
+				const redirectUrl = pageStack[pageStack.length - 1].route;
+				const routeType = tabBarPagePaths.includes(redirectUrl) ? 'switchTab' : 'redirectTo';
+				// 当前回调的地址是否是tabbar页面
+				// 1. 跳转到登录页
+				return uni.redirectTo({
+					url: `/pages/login/login?routeType=${routeType}&redirectUrl=/${redirectUrl}`
+				});
 			}
 			uni.utils.toast(result.data.msg || '请求失败');
 		}

@@ -1,0 +1,65 @@
+.my {
+	background-color: $uni-bg-color;
+	height: calc(100vh - 50px);
+	.userinfo {
+		height: 584rpx;
+		background-image: url('../../static/images/profile-bg@2x.png');
+		background-size: 100% 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: #fff;
+		line-height: 1.8;
+		font-size: 28rpx;
+		.avatar {
+			width: 140rpx;
+			height: 140rpx;
+			margin-top: 90rpx;
+		}
+		.username {
+			font-size: 36rpx;
+			margin: 10px 0;
+		}
+	}
+	.overview {
+		height: 268rpx;
+		margin: 0 30rpx;
+		border-radius: 16rpx;
+		background-color: #fff;
+		position: relative;
+		top: -130rpx;
+		.title {
+			color: $uni-minor-text;
+			font-size: $uni-font-size-small;
+			padding-top: 28rpx;
+			text-align: center;
+
+			&::after,
+			&::before {
+				content: '-';
+				margin: 0 10rpx;
+			}
+		}
+		.content {
+			display: flex;
+			justify-content: space-around;
+			text-align: center;
+			margin-top: 40rpx;
+			color: #000;
+			font-size: $uni-font-size-small;
+			.item {
+				.num {
+					display: block;
+					font-size: 36rpx;
+					margin-bottom: 20rpx;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+	.list {
+		margin: -100rpx 30rpx 0;
+		border-radius: 16rpx;
+		overflow: hidden;
+	}
+}
